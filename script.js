@@ -1,10 +1,13 @@
 
 /* =========================================
    CASA SERVICE 360 SRLS
-   FUNZIONI DEL SITO
+   JAVASCRIPT - VERSIONE AGGIORNATA
 ========================================= */
 
-// MENU SMARTPHONE
+
+/* =========================================
+   1. MENU SMARTPHONE
+========================================= */
 
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
@@ -32,7 +35,10 @@ if (menuToggle && navLinks) {
 
             menuToggle.textContent = "☰";
 
-            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
 
         });
 
@@ -41,7 +47,9 @@ if (menuToggle && navLinks) {
 }
 
 
-// ANNO AUTOMATICO
+/* =========================================
+   2. ANNO AUTOMATICO
+========================================= */
 
 const yearElement = document.getElementById("year");
 
@@ -52,7 +60,9 @@ if (yearElement) {
 }
 
 
-// MODULO RICHIESTA PREVENTIVO WHATSAPP
+/* =========================================
+   3. MODULO PREVENTIVO WHATSAPP
+========================================= */
 
 const contactForm = document.getElementById("contactForm");
 
@@ -70,6 +80,9 @@ if (contactForm) {
 
         const message = document.getElementById("message").value.trim();
 
+
+        // Controllo campi obbligatori
+
         if (!name || !phone || !service) {
 
             alert("Compila tutti i campi obbligatori.");
@@ -78,23 +91,47 @@ if (contactForm) {
 
         }
 
+
+        // Numero aziendale WhatsApp
+
         const whatsappNumber = "393286546923";
 
+
+        // Creazione messaggio
+
         const whatsappMessage =
-            "Buongiorno Casa Service 360 SRLS!\n\n" +
+
+            "BUONGIORNO CASA SERVICE 360 SRLS!\n\n" +
+
             "Vorrei richiedere un preventivo.\n\n" +
+
             "Nome: " + name + "\n" +
+
             "Telefono: " + phone + "\n" +
+
             "Servizio richiesto: " + service + "\n" +
+
             "Messaggio: " +
+
             (message || "Nessun messaggio aggiuntivo") +
+
             "\n\nGrazie!";
 
+
+        // Collegamento WhatsApp
+
         const whatsappURL =
+
             "https://wa.me/" +
+
             whatsappNumber +
+
             "?text=" +
+
             encodeURIComponent(whatsappMessage);
+
+
+        // Apertura WhatsApp
 
         window.open(
             whatsappURL,
@@ -107,7 +144,9 @@ if (contactForm) {
 }
 
 
-// ANIMAZIONE SCORRIMENTO MENU
+/* =========================================
+   4. SCORRIMENTO FLUIDO DELLE SEZIONI
+========================================= */
 
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
@@ -116,7 +155,9 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         const targetId = this.getAttribute("href");
 
         if (!targetId || targetId === "#") {
+
             return;
+
         }
 
         const target = document.querySelector(targetId);
@@ -126,8 +167,11 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
             event.preventDefault();
 
             target.scrollIntoView({
+
                 behavior: "smooth",
+
                 block: "start"
+
             });
 
         }
@@ -135,3 +179,26 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     });
 
 });
+
+
+/* =========================================
+   5. CHIUSURA MENU CON TASTO ESC
+========================================= */
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape" && navLinks && menuToggle) {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.textContent = "☰";
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+});
+
