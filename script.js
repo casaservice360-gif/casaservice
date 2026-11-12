@@ -1,7 +1,7 @@
 
 /* =========================================
    CASA SERVICE 360 SRLS
-   JAVASCRIPT - VERSIONE AGGIORNATA
+   JAVASCRIPT - FORMSPREE
 ========================================= */
 
 
@@ -61,91 +61,18 @@ if (yearElement) {
 
 
 /* =========================================
-   3. MODULO PREVENTIVO WHATSAPP
+   3. MODULO PREVENTIVO
+   INVIO DIRETTO A FORMSPREE
 ========================================= */
 
-const contactForm = document.getElementById("contactForm");
-
-if (contactForm) {
-
-    contactForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-
-        const phone = document.getElementById("phone").value.trim();
-
-        const service = document.getElementById("service").value;
-
-        const message = document.getElementById("message").value.trim();
-
-
-        // Controllo campi obbligatori
-
-        if (!name || !phone || !service) {
-
-            alert("Compila tutti i campi obbligatori.");
-
-            return;
-
-        }
-
-
-        // Numero aziendale WhatsApp
-
-        const whatsappNumber = "393286546923";
-
-
-        // Creazione messaggio
-
-        const whatsappMessage =
-
-            "BUONGIORNO CASA SERVICE 360 SRLS!\n\n" +
-
-            "Vorrei richiedere un preventivo.\n\n" +
-
-            "Nome: " + name + "\n" +
-
-            "Telefono: " + phone + "\n" +
-
-            "Servizio richiesto: " + service + "\n" +
-
-            "Messaggio: " +
-
-            (message || "Nessun messaggio aggiuntivo") +
-
-            "\n\nGrazie!";
-
-
-        // Collegamento WhatsApp
-
-        const whatsappURL =
-
-            "https://wa.me/" +
-
-            whatsappNumber +
-
-            "?text=" +
-
-            encodeURIComponent(whatsappMessage);
-
-
-        // Apertura WhatsApp
-
-        window.open(
-            whatsappURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-    });
-
-}
+// IMPORTANTE:
+// Non intercettare il submit del modulo.
+// Il browser invierà i dati direttamente
+// all'indirizzo Formspree indicato nell'HTML.
 
 
 /* =========================================
-   4. SCORRIMENTO FLUIDO DELLE SEZIONI
+   4. SCORRIMENTO FLUIDO
 ========================================= */
 
 document.querySelectorAll('a[href^="#"]').forEach(function (link) {
@@ -155,9 +82,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
         const targetId = this.getAttribute("href");
 
         if (!targetId || targetId === "#") {
-
             return;
-
         }
 
         const target = document.querySelector(targetId);
@@ -167,11 +92,8 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
             event.preventDefault();
 
             target.scrollIntoView({
-
                 behavior: "smooth",
-
                 block: "start"
-
             });
 
         }
@@ -201,4 +123,3 @@ document.addEventListener("keydown", function (event) {
     }
 
 });
-
