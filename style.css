@@ -772,3 +772,70 @@ h2 {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =====================================
+   MODULO PREVENTIVO FORMSPREE
+===================================== */
+
+.contact-form {
+    width: 100%;
+}
+
+.contact-form .privacy-consent {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 20px 0;
+    color: var(--green-dark);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.contact-form .privacy-consent input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+    margin: 2px 0 0;
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+.contact-form button[type="submit"] {
+    width: 100%;
+    margin-top: 15px;
+    background: #329D6B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 17px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+.contact-form small {
+    display: block;
+    margin-top: 15px;
+    font-size: 11px;
+    color: var(--gray);
+}
+
+@media (max-width: 650px) {
+    .contact-form {
+        padding: 25px 18px;
+    }
+
+    .contact-form .privacy-consent {
+        font-size: 12px;
+    }
+}
+
