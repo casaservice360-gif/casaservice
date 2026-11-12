@@ -577,82 +577,106 @@
         </div>
 
 
-        <!-- MODULO PREVENTIVO -->
+   
+<!-- MODULO PREVENTIVO FORMSPREE -->
 
-        <form class="contact-form" id="contactForm">
+<form
+    class="contact-form"
+    id="contactForm"
+    action="https://formspree.io/f/mrpqbarj"
+    method="POST"
+>
 
-            <h3>Richiedi un preventivo</h3>
+    <h3>Richiedi un preventivo gratuito</h3>
 
-            <label for="name">
-                Nome e cognome
-            </label>
+    <input
+        type="hidden"
+        name="_subject"
+        value="Nuova richiesta dal sito Casa Service 360"
+    >
 
-            <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Il tuo nome"
-                autocomplete="name"
-                required
-            >
+    <label for="name">Nome e cognome *</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Il tuo nome"
+        autocomplete="name"
+        required
+    >
 
-            <label for="phone">
-                Telefono
-            </label>
+    <label for="phone">Telefono *</label>
+    <input
+        type="tel"
+        id="phone"
+        name="phone"
+        placeholder="Il tuo numero"
+        autocomplete="tel"
+        required
+    >
 
-            <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Il tuo numero"
-                autocomplete="tel"
-                required
-            >
+    <label for="email">Email *</label>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="La tua email"
+        autocomplete="email"
+        required
+    >
 
-            <label for="service">
-                Servizio richiesto
-            </label>
+    <label for="address">Indirizzo dell'intervento</label>
+    <input
+        type="text"
+        id="address"
+        name="address"
+        placeholder="Via e città"
+    >
 
-            <select id="service" name="service" required>
+    <label for="service">Servizio richiesto *</label>
+    <select id="service" name="service" required>
+        <option value="">Seleziona un servizio</option>
+        <option value="Pulizie civili">Pulizie civili</option>
+        <option value="Pulizie industriali">Pulizie industriali</option>
+        <option value="Condomini e uffici">Condomini e uffici</option>
+        <option value="Wellness e palestre">Wellness e palestre</option>
+        <option value="Asili nido">Asili nido</option>
+        <option value="Bar e attività commerciali">Bar e attività commerciali</option>
+        <option value="Edilizia">Edilizia</option>
+        <option value="Ristrutturazioni">Ristrutturazioni</option>
+        <option value="Manutenzioni">Manutenzioni</option>
+        <option value="Altro">Altro</option>
+    </select>
 
-                <option value="">
-                    Seleziona un servizio
-                </option>
+    <label for="message">Descrizione della richiesta *</label>
+    <textarea
+        id="message"
+        name="message"
+        rows="5"
+        placeholder="Descrivi il lavoro di cui hai bisogno"
+        required
+    ></textarea>
 
-                <option>Pulizie civili</option>
-                <option>Pulizie industriali</option>
-                <option>Condomini e uffici</option>
-                <option>Wellness e palestre</option>
-                <option>Asili nido</option>
-                <option>Bar e attività commerciali</option>
-                <option>Edilizia</option>
-                <option>Ristrutturazioni</option>
-                <option>Manutenzioni</option>
-                <option>Altro</option>
+    <label>
+        <input
+            type="checkbox"
+            name="privacy"
+            value="Accetto"
+            required
+        >
+        Ho letto l'informativa privacy e acconsento al trattamento dei dati.
+    </label>
 
-            </select>
+    <button type="submit" class="btn btn-primary">
+        INVIA RICHIESTA
+    </button>
 
-            <label for="message">
-                Messaggio
-            </label>
+    <small>
+        * Campi obbligatori. Ti ricontatteremo appena possibile.
+    </small>
 
-            <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Descrivi la tua richiesta"
-            ></textarea>
+</form>
 
-            <button type="submit" class="btn btn-primary">
-                Invia richiesta su WhatsApp
-            </button>
-
-            <small>
-                Il messaggio verrà preparato su WhatsApp.
-                Dovrai confermare personalmente l'invio.
-            </small>
-
-        </form>
 
     </div>
 
